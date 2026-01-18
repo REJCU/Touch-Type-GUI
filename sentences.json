@@ -1,0 +1,23 @@
+{
+  "beginner": [
+    "the cat sat on the mat",
+    "sad dad had a salad",
+    "all fall down in the hall",
+    "as a lad i had a glass",
+    "fast cats dash past"
+  ],
+  "intermediate": [
+    "The quick brown fox jumps over the lazy dog.",
+    "A journey of a thousand miles begins with a single step.",
+    "Python is an interpreted, high-level programming language.",
+    "To be or not to be, that is the question.",
+    "Practice makes perfect when learning to touch type."
+  ],
+  "advanced": [
+    "def my_function(x): return [i for i in x if i % 2 == 0]",
+    "The complexity of 2026 software architecture is breathtaking.",
+    "She sells seashells by the seashore, but the shells are expensive.",
+    "Is it better to use 'Single Quotes' or \"Double Quotes\" in JSON?",
+    "Synchronous communication is vital for real-time application state."
+  ]
+}
