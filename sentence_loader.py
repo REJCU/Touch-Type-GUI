@@ -12,7 +12,7 @@ class SentenceHandler():
         except (FileNotFoundkrror, json.JSONDecodeError):
             self.sentences = ["SentenceHandler"]
     
-    def random_sentence(self, difficulty ="beginner"):
+    def random_sentence(self, difficulty = str):
         """" 
         User clicks "Hard".
         GUI tells the Engine: "Set mode to advanced."
