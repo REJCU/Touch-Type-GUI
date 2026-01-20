@@ -1,10 +1,10 @@
 import time
 import sentence_loader
 
-handler = sentence_loader()
-text = handler.random_sentence("advanced")
+# handler = sentence_loader()
+# text = handler.random_sentence("advanced")
 
-Class TypingEngine():
+class TypingEngine():
     def __init__(self, text):
         self.target = text
         self.current_input = ""
