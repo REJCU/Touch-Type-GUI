@@ -55,10 +55,10 @@ class GameFrame(customtkinter.CTkFrame):
         super().__init__(master, **kwargs)
 
         self.label = customtkinter.CTkLabel(self, text=" ")
-        self.label.grid(row=0, column=0, padx=20)
+        self.label.grid(row=0, column=0, padx=40, pady=40)
 
         self.entry = customtkinter.CTkEntry(self)
-        self.entry.grid(row=5, column=5)
+        self.entry.grid(row=0, column=1, padx=40, pady=40)
         self.entry.bind("<Key>", self.handle_keypress)
         self.entry.bind("<Return>", self.enter_press)
 
