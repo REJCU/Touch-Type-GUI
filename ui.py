@@ -1,4 +1,5 @@
 import customtkinter
+import time 
 
 import engine
 from sentence_loader import SentenceHandler
@@ -72,6 +73,18 @@ class GameFrame(customtkinter.CTkFrame):
     def enter_press(self, event):
         if event.keysym == "Return":
             print("enter")
+            # self.gameframe.destroy()
+            self.master.engine.calculate_score()
+            print(time_elapsed, round(wpm, 2), accuracy)
+
+
+class ResultsFrame(customtkinter.CTkFrame):
+    def __init__(self, master, **kwargs):
+        super().__init__(master, **kwargs)
+
+        self.label = customtkinter.CTkLabel(self, text=" ") 
+        
+
 
 
 app = App()

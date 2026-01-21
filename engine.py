@@ -1,8 +1,8 @@
 import time
 import sentence_loader
 
-# handler = sentence_loader()
-# text = handler.random_sentence("advanced")
+#handler = sentence_loader()
+#text = handler.random_sentence("advanced")
 
 class TypingEngine():
     def __init__(self, text):
