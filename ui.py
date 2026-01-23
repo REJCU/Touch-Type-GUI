@@ -12,6 +12,8 @@ class App(customtkinter.CTk):
         self.menuframe = MenuFrame(self)
         self.gameframe = GameFrame(self)
         self.menuframe.pack()
+        
+        self.resultsframe = ResultsFrame(self)
 
     def start_game(self, diffuculty):
         self.menuframe.pack_forget()
@@ -73,9 +75,10 @@ class GameFrame(customtkinter.CTkFrame):
     def enter_press(self, event):
         if event.keysym == "Return":
             print("enter")
-            # self.gameframe.destroy()
-            self.master.engine.calculate_score()
-            print(time_elapsed, round(wpm, 2), accuracy)
+            input_string = self.entry.get()
+            print(str(input_string))
+            results = self.master.engine.calculate_score(input_string)
+            
 
 
 class ResultsFrame(customtkinter.CTkFrame):

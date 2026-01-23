@@ -30,9 +30,10 @@ class TypingEngine():
             self.end_time = time.time()
 
     
-    def calculate_score(self):
+    def calculate_score(self, user_input):
         time_elapsed = self.end_time - self.start_time
         wpm = (len(self.target)/5) / (time_elapsed / 60)
         accuracy = ((len(self.target)) / self.total_keystroke) * 100
-
+        print(f" Time: {time_elapsed}, WPM: {round(wpm,2)} , Accuracy: {accuracy}") 
         return time_elapsed, round(wpm, 2), accuracy
+        
