@@ -22,13 +22,13 @@ class App(customtkinter.CTk):
         self.gameframe.label.configure(text=new_text)
         self.gameframe.pack()
         self.gameframe.entry.focus()
-        
-    def end_game(self, stats):
-        self.gameframe.pack_forget()
-        stats = self.engine.calculate_score(stats)
-        self.resultsframe.label.configure(text=stats)
-        self.resultsframe.pack()
 
+
+    def finish_game(self, stats):
+        results = self.engine.calculate_score(stats)
+        self.gameframe.pack_forget()
+        self.resultsframe.label.configure(text=results)
+        self.resultsframe.pack()
 
 class MenuFrame(customtkinter.CTkFrame):
     def __init__(self, master):
@@ -83,9 +83,7 @@ class GameFrame(customtkinter.CTkFrame):
             print("enter")
             input_string = self.entry.get()
             print(str(input_string))
-            results = self.master.engine.calculate_score(input_string)
-            
-
+            self.master.finish_game(self.entry.get())
 
 class ResultsFrame(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
@@ -93,6 +91,10 @@ class ResultsFrame(customtkinter.CTkFrame):
 
         self.label = customtkinter.CTkLabel(self, text=" ") 
         self.label.grid(row=0, column=0, padx=40, pady=40) 
+
+
+
+
 
 
 
