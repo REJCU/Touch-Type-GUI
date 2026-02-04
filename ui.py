@@ -3,6 +3,7 @@ import time
 
 import engine
 from sentence_loader import SentenceHandler
+import stats
 
 
 class App(customtkinter.CTk):
@@ -14,6 +15,8 @@ class App(customtkinter.CTk):
         self.menuframe.pack()
         
         self.resultsframe = ResultsFrame(self)
+        self.final_results = None
+        self.stats = stats.RecordResults()
 
     def start_game(self, diffuculty):
         self.menuframe.pack_forget()
@@ -24,11 +27,14 @@ class App(customtkinter.CTk):
         self.gameframe.entry.focus()
 
 
-    def finish_game(self, stats):
-        results = self.engine.calculate_score(stats)
+    def finish_game(self, sentence):
+        results = self.engine.calculate_score(sentence)
+        self.stats.convert_to_json(results)
         self.gameframe.pack_forget()
         self.resultsframe.label.configure(text=results)
         self.resultsframe.pack()
+
+        self.final_results = results
 
 class MenuFrame(customtkinter.CTkFrame):
     def __init__(self, master):
@@ -64,10 +70,10 @@ class GameFrame(customtkinter.CTkFrame):
         super().__init__(master, **kwargs)
 
         self.label = customtkinter.CTkLabel(self, text=" ")
-        self.label.grid(row=0, column=0, padx=40, pady=40)
+        self.label.grid(row=0, column=0, padx=200, pady=200)
 
         self.entry = customtkinter.CTkEntry(self)
-        self.entry.grid(row=0, column=1, padx=40, pady=40)
+        self.entry.grid(row=0, column=1, padx=200, pady=200)
         self.entry.bind("<Key>", self.handle_keypress)
         self.entry.bind("<Return>", self.enter_press)
 
@@ -90,7 +96,7 @@ class ResultsFrame(customtkinter.CTkFrame):
         super().__init__(master, **kwargs)
 
         self.label = customtkinter.CTkLabel(self, text=" ") 
-        self.label.grid(row=0, column=0, padx=40, pady=40) 
+        self.label.grid(row=0, column=0, padx=400, pady=400) 
 
 
 
