@@ -29,7 +29,7 @@ class App(customtkinter.CTk):
 
     def finish_game(self, sentence):
         results = self.engine.calculate_score(sentence)
-        self.stats.convert_to_json(results)
+        self.stats.print_to_json(results)
         self.gameframe.pack_forget()
         self.resultsframe.label.configure(text=results)
         self.resultsframe.pack()

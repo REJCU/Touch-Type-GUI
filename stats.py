@@ -1,18 +1,20 @@
+"""
+Takes results of touch typing session and saves it to a json file.
+"""
+
 import json 
 
 class RecordResults():
     def __init__(self):
         super().__init__()
 
-    def convert_to_json(self, text):
-        print("convert_to_json",text)
-        print(type(text))
-        json_text = json.loads(text)
-        print(json_text["Time"])
+    def print_to_json(self, data):
+        # Sends to the json file. 
+        with open("results.json", "a") as f:
+            data = json.dumps(data)
+            print(data)
+            f.write(data)
 
 
-
-    def print_to_json(self):
-        pass
 
 
