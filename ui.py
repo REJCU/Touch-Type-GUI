@@ -70,12 +70,17 @@ class GameFrame(customtkinter.CTkFrame):
         super().__init__(master, **kwargs)
 
         self.label = customtkinter.CTkLabel(self, text=" ")
-        self.label.grid(row=0, column=0, padx=200, pady=200)
+        self.label.grid(row=0, column=0, padx=20, pady=20)
+
+        self.grid_columnconfigure(0, weight=1) 
+        self.grid_rowconfigure(0, weight=1)
 
         self.entry = customtkinter.CTkEntry(self)
-        self.entry.grid(row=0, column=1, padx=200, pady=200)
+        self.entry.grid(row=1, column=0, padx=20, pady=20)
         self.entry.bind("<Key>", self.handle_keypress)
         self.entry.bind("<Return>", self.enter_press)
+
+
 
     def handle_keypress(self, event):
         if event.keysym == "BackSpace":

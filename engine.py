@@ -9,7 +9,7 @@ class TypingEngine():
         self.target = text
         self.current_input = ""
         self.start_time = int(0)
-        self.end_time = int(0) 
+        self.end_time = None 
         self.total_keystroke = 0 
 
 
@@ -31,12 +31,17 @@ class TypingEngine():
 
     
     def calculate_score(self, user_input):
-        time_elapsed = self.end_time - self.start_time
+        time_elapsed = time.time() - self.start_time
         if time_elapsed > 0:
             wpm = (len(self.target)/5) / (time_elapsed / 60) 
         else:
-            wpm = (len(self.target)/5) / (time_elapsed / 60) * 60 
-        accuracy = ((len(self.target)) / self.total_keystroke) * 100
+            wpm = (len(self.target)/5) / (time_elapsed / 60) 
+        if  self.target == self.current_input: 
+            accuracy = ((len(self.target)) / self.total_keystroke) * 100
+        else:
+            print("Try again")
+            pass
+        
         print(f" Time: {round(time_elapsed, 2)}, WPM: {round(wpm,2)} , Accuracy: {round(accuracy, 2)}") 
         results = { "Time": round(time_elapsed, 2),
                     "WPM": round(wpm, 2),
