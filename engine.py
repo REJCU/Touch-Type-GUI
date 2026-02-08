@@ -11,6 +11,7 @@ class TypingEngine():
         self.start_time = int(0)
         self.end_time = None 
         self.total_keystroke = 0 
+        self.diffuculty = ""
 
 
     def process_key(self, char):

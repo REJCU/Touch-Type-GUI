@@ -11,13 +11,15 @@ class RecordResults():
     def __init__(self):
         super().__init__()
 
-    def print_to_json(self, data):
+    def print_to_json(self, data, chosen_sentence):
         # Sends to the json file. 
         with open("results.json", "a") as f:
             date =  f"{attempt_date.day}-{attempt_date.month}-{attempt_date.year}"
             # Init the new assignment
+            data["Sentence"] = chosen_sentence
             data["Date"] = date
             data = json.dumps(data)
+            print(chosen_sentence)
             print(data)
             print(type(data))
             print(date)

@@ -21,15 +21,16 @@ class App(customtkinter.CTk):
     def start_game(self, diffuculty):
         self.menuframe.pack_forget()
         new_text = self.handler.random_sentence(diffuculty)
+        self.chosen_sentence = new_text
         self.engine = engine.TypingEngine(new_text)
         self.gameframe.label.configure(text=new_text)
         self.gameframe.pack()
         self.gameframe.entry.focus()
 
 
-    def finish_game(self, sentence):
+    def finish_game(self, sentence, chosen_sentence):
         results = self.engine.calculate_score(sentence)
-        self.stats.print_to_json(results)
+        self.stats.print_to_json(results, chosen_sentence)
         self.gameframe.pack_forget()
         self.resultsframe.label.configure(text=results)
         self.resultsframe.pack()
@@ -82,6 +83,7 @@ class GameFrame(customtkinter.CTkFrame):
 
 
 
+
     def handle_keypress(self, event):
         if event.keysym == "BackSpace":
             self.master.engine.process_key("BACKSPACE")
@@ -94,7 +96,7 @@ class GameFrame(customtkinter.CTkFrame):
             print("enter")
             input_string = self.entry.get()
             print(str(input_string))
-            self.master.finish_game(self.entry.get())
+            self.master.finish_game(self.entry.get(), self.master.chosen_sentence)
 
 class ResultsFrame(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
