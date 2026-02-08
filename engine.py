@@ -32,16 +32,17 @@ class TypingEngine():
 
     
     def calculate_score(self, user_input):
-        time_elapsed = time.time() - self.start_time
-        wpm = (len(self.target)/5) / (time_elapsed / 60) 
-        # if  self.target == self.current_input: 
-        accuracy = ((len(self.target)) / self.total_keystroke) * 100
-        #else:
-        #   print("Try again")
-        #  pass
-        
-        print(f" Time: {round(time_elapsed, 2)}, WPM: {round(wpm,2)} , Accuracy: {round(accuracy, 2)}") 
-        results = { "Time": round(time_elapsed, 2),
-                    "WPM": round(wpm, 2),
-                    "Accuracy": round(accuracy, 2)} 
+        # Checks if sentence is complete and then return results, is enter is pressed early, prints outbound variable
+        if self.target == self.current_input:
+            time_elapsed = time.time() - self.start_time
+            wpm = (len(self.target)/5) / (time_elapsed / 60) 
+            # if  self.target == self.current_input: 
+            accuracy = ((len(self.target)) / self.total_keystroke) * 100
+            #else:
+            #   print("Try again")
+            #  pass 
+            print(f" Time: {round(time_elapsed, 2)}, WPM: {round(wpm,2)} , Accuracy: {round(accuracy, 2)}") 
+            results = { "Time": round(time_elapsed, 2),
+                        "WPM": round(wpm, 2),
+                        "Accuracy": round(accuracy, 2)} 
         return results
