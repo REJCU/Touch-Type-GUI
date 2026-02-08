@@ -24,3 +24,7 @@
 {"Time": 8.6, "WPM": 26.5, "Accuracy": 79.17, "Date": "8-2-2026"}
 {"Time": 8.53, "WPM": 30.95, "Accuracy": 88.0, "Date": "8-2-2026"}
 {"Time": 6.97, "WPM": 32.72, "Accuracy": 86.36, "Sentence": "sad dad had a salad", "Date": "8-2-2026"}
+{"Time": 31.78, "WPM": 21.15, "Accuracy": 83.58, "Sentence": "A journey of a thousand miles begins with a single step.", "Date": "8-2-2026"}
+{"Time": 27.48, "WPM": 19.21, "Accuracy": 70.97, "Sentence": "The quick brown fox jumps over the lazy dog.", "Date": "8-2-2026"}
+{"Time": 68.91, "WPM": 9.58, "Accuracy": 57.29, "Sentence": "def my_function(x): return [i for i in x if i % 2 == 0]", "Date": "8-2-2026"}
+{"Time": 0.39, "WPM": 1807.61, "Accuracy": 2900.0, "Sentence": "Python is an interpreted, high-level programming language.", "Date": "8-2-2026"}
