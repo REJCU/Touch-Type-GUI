@@ -45,4 +45,4 @@ class TypingEngine():
             results = { "Time": round(time_elapsed, 2),
                         "WPM": round(wpm, 2),
                         "Accuracy": round(accuracy, 2)} 
-        return results
+            return results
