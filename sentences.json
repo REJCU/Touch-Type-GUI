@@ -19,5 +19,26 @@
     "She sells seashells by the seashore, but the shells are expensive.",
     "Is it better to use 'Single Quotes' or \"Double Quotes\" in JSON?",
     "Synchronous communication is vital for real-time application state."
+  ], 
+  "programming-easy": [
+  "let count = 0; Rust",
+    "print(\"hello world\") Python",
+    "std::vector<int> v; C++",
+    "value_one = 10.5 Python",
+    "for x in y: Python"
+],
+  "programming-intermediate": [
+    "if (x == y) { return true; } C++",
+    "self.data.push_back(item);  C++",
+    "let mut buffer = String::new(); Rust",
+    "prices = [p * 0.9 for p in list] Python",
+    "std::cout << \"Result: \" << x << endl; C++"
+  ],
+  "programming-advanced": [
+    "auto res = std::find_if(v.begin(), v.end(), [](int i){return i > 0;}); C++",
+    "pub fn get_data<T>(id: u64) -> Option<T> where T: Default { None } Rust",
+    "df.loc[df['A'] > 5, 'B'] = lambda x: x.strip().lower() Python",
+    "while let Some(msg) = rx.recv().await { println!(\"{:?}\", msg); } Rust",
+    "template <typename T> T max(T a, T b) { return (a > b) ? a : b; } C++"
   ]
 }

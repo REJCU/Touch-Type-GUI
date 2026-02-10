@@ -34,3 +34,17 @@
 {"Time": 31.81, "WPM": 16.6, "Accuracy": 73.33, "Sentence": "The quick brown fox jumps over the lazy dog.", "Date": "9-2-2026"}
 {"Time": 11.36, "WPM": 23.23, "Accuracy": 84.62, "Sentence": "the cat sat on the mat", "Date": "9-2-2026"}
 {"Time": 10.2, "WPM": 25.89, "Accuracy": 84.62, "Sentence": "the cat sat on the mat", "Date": "9-2-2026"}
+{"Time": 10.07, "WPM": 22.64, "Accuracy": 82.61, "Sentence": "fast cats dash past", "Date": "10-2-2026"}
+{"Time": 30.51, "WPM": 20.06, "Accuracy": 82.26, "Sentence": "Practice makes perfect when learning to touch type.", "Date": "10-2-2026"}
+{"Time": 8.86, "WPM": 29.79, "Accuracy": 95.65, "Sentence": "as a lad i had a glass", "Date": "10-2-2026"}
+{"Time": 20.99, "WPM": 23.44, "Accuracy": 83.67, "Sentence": "To be or not to be, that is the question.", "Date": "11-2-2026"}
+{"Time": 66.93, "WPM": 10.4, "Accuracy": 79.45, "Sentence": "Python is an interpreted, high-level programming language.", "Date": "11-2-2026"}
+{"Time": 36.55, "WPM": 14.45, "Accuracy": 69.84, "Sentence": "The quick brown fox jumps over the lazy dog.", "Date": "11-2-2026"}
+{"Time": 34.76, "WPM": 20.02, "Accuracy": 86.57, "Sentence": "Python is an interpreted, high-level programming language.", "Date": "11-2-2026"}
+{"Time": 10.27, "WPM": 25.71, "Accuracy": 88.0, "Sentence": "as a lad i had a glass", "Date": "11-2-2026"}
+{"Time": 36.89, "WPM": 9.43, "Accuracy": 55.77, "Sentence": "print(\"hello world\") # Python", "Date": "11-2-2026"}
+{"Time": 25.57, "WPM": 11.73, "Accuracy": 71.43, "Sentence": "value_one = 10.5 # Python", "Date": "11-2-2026"}
+{"Time": 41.62, "WPM": 7.5, "Accuracy": 48.15, "Sentence": "std::vector<int> v; // C++", "Date": "11-2-2026"}
+{"Time": 24.58, "WPM": 13.18, "Accuracy": 62.79, "Sentence": "print(\"hello world\") Python", "Date": "11-2-2026"}
+{"Time": 12.87, "WPM": 16.79, "Accuracy": 64.29, "Sentence": "for x in y: Python", "Date": "11-2-2026"}
+{"Time": 36.34, "WPM": 12.88, "Accuracy": 79.59, "Sentence": "prices = [p * 0.9 for p in list] Python", "Date": "11-2-2026"}

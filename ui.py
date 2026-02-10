@@ -56,6 +56,21 @@ class MenuFrame(customtkinter.CTkFrame):
         )
         self.button.pack(padx=40, pady=40)
 
+        self.button = customtkinter.CTkButton(
+            self, text="Programming-easy", command=lambda: master.start_game("programming-easy")
+        )
+        self.button.pack(padx=40, pady=40)
+
+        self.button = customtkinter.CTkButton(
+            self, text="Programming-intermediate", command=lambda: master.start_game("programming-intermediate")
+        )
+        self.button.pack(padx=40, pady=40)
+
+        self.button = customtkinter.CTkButton(
+            self, text="Programming-advanced", command=lambda: master.start_game("programming-advanced")
+        )
+        self.button.pack(padx=40, pady=40)
+
     def button_easy(self):
         self.master.start_game("beginner")
 
@@ -64,6 +79,15 @@ class MenuFrame(customtkinter.CTkFrame):
 
     def button_advanced(self):
         self.master.start_game("advanced")
+    
+    def button_programming(self):
+        self.master.start_game("programming-easy")
+
+    def button_programming_intermediate(self):
+        self.master.start_game("programming-intermediate")
+
+    def button_programming_advanced(self):
+        self.master.start_game("programming-advanced")
 
 
 class GameFrame(customtkinter.CTkFrame):
@@ -71,13 +95,13 @@ class GameFrame(customtkinter.CTkFrame):
         super().__init__(master, **kwargs)
 
         self.label = customtkinter.CTkLabel(self, text=" ")
-        self.label.grid(row=0, column=0, padx=20, pady=20)
+        self.label.grid(row=0, column=0, padx=400, pady=400)
 
         self.grid_columnconfigure(0, weight=1) 
         self.grid_rowconfigure(0, weight=1)
 
         self.entry = customtkinter.CTkEntry(self)
-        self.entry.grid(row=1, column=0, padx=20, pady=20)
+        self.entry.grid(row=1, column=0, padx=0, pady=0, sticky="ew")
         self.entry.bind("<Key>", self.handle_keypress)
         self.entry.bind("<Return>", self.enter_press)
 
