@@ -48,3 +48,5 @@
 {"Time": 24.58, "WPM": 13.18, "Accuracy": 62.79, "Sentence": "print(\"hello world\") Python", "Date": "11-2-2026"}
 {"Time": 12.87, "WPM": 16.79, "Accuracy": 64.29, "Sentence": "for x in y: Python", "Date": "11-2-2026"}
 {"Time": 36.34, "WPM": 12.88, "Accuracy": 79.59, "Sentence": "prices = [p * 0.9 for p in list] Python", "Date": "11-2-2026"}
+{"Time": 27.88, "WPM": 14.64, "Accuracy": 69.39, "Sentence": "4j // Move the cursor down 4 lines", "Date": "11-2-2026"}
+{"Time": 48.69, "WPM": 15.04, "Accuracy": 83.56, "Sentence": "vim.opt.relativenumber = true -- Enable relative line numbers", "Date": "11-2-2026"}

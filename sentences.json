@@ -40,5 +40,28 @@
     "df.loc[df['A'] > 5, 'B'] = lambda x: x.strip().lower() Python",
     "while let Some(msg) = rx.recv().await { println!(\"{:?}\", msg); } Rust",
     "template <typename T> T max(T a, T b) { return (a > b) ? a : b; } C++"
+  ], 
+  "Vim-motions-easy": [
+  ":w // Save the current file",
+    ":q! // Force quit without saving",
+    "4j // Move the cursor down 4 lines",
+    "dw // Delete from cursor to the start of next word",
+    "gg // Jump to the very top of the file"
+  ], 
+  "Vim-motions-intermediate": [
+    ":vsplit // Split the window vertically",
+    "G // Jump to the very end of the file",
+    "ci\" // Change everything inside the double quotes",
+    "vim.opt.relativenumber = true -- Enable relative line numbers",
+    ":checkhealth // Run the Neovim diagnostic check"
+  ],
+  "Vim-motions-advanced": [
+    "vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {silent = true})",
+    ":%s/\\v(foo|bar)/baz/g // Advanced regex substitute with very-magic mode",
+    "use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/plenary.nvim'}}}",
+    "print(vim.inspect(vim.lsp.buf_get_clients())) -- Debug LSP clients",
+    ":setlocal spell spelllang=en_us // Enable spellcheck for current buffer"
   ]
+
+
 }

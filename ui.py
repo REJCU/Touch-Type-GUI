@@ -56,6 +56,7 @@ class MenuFrame(customtkinter.CTkFrame):
         )
         self.button.pack(padx=40, pady=40)
 
+        # for programming 
         self.button = customtkinter.CTkButton(
             self, text="Programming-easy", command=lambda: master.start_game("programming-easy")
         )
@@ -71,6 +72,22 @@ class MenuFrame(customtkinter.CTkFrame):
         )
         self.button.pack(padx=40, pady=40)
 
+        # for Vim-motions
+        self.button = customtkinter.CTkButton(
+            self, text="Vim-motions-easy", command=lambda: master.start_game("Vim-motions-easy")
+        )
+        self.button.pack(padx=40, pady=40)
+
+        self.button = customtkinter.CTkButton(
+            self, text="Vim-motions-intermediate", command=lambda: master.start_game("Vim-motions-intermediate")
+        )
+        self.button.pack(padx=40, pady=40)
+
+        self.button = customtkinter.CTkButton(
+            self, text="Vim-motions-advanced", command=lambda: master.start_game("Vim-motions-advanced")
+        )
+        self.button.pack(padx=40, pady=40)
+
     def button_easy(self):
         self.master.start_game("beginner")
 
@@ -79,6 +96,7 @@ class MenuFrame(customtkinter.CTkFrame):
 
     def button_advanced(self):
         self.master.start_game("advanced")
+
     
     def button_programming(self):
         self.master.start_game("programming-easy")
@@ -88,6 +106,17 @@ class MenuFrame(customtkinter.CTkFrame):
 
     def button_programming_advanced(self):
         self.master.start_game("programming-advanced")
+
+
+    def button_programming_advanced(self):
+        self.master.start_game("Vim-motions-easy")
+
+    def button_programming_advanced(self):
+        self.master.start_game("Vim-motions-intermediate")
+
+    def button_programming_advanced(self):
+        self.master.start_game("Vim-motions-advanced")
+
 
 
 class GameFrame(customtkinter.CTkFrame):
