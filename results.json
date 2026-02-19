@@ -50,3 +50,21 @@
 {"Time": 36.34, "WPM": 12.88, "Accuracy": 79.59, "Sentence": "prices = [p * 0.9 for p in list] Python", "Date": "11-2-2026"}
 {"Time": 27.88, "WPM": 14.64, "Accuracy": 69.39, "Sentence": "4j // Move the cursor down 4 lines", "Date": "11-2-2026"}
 {"Time": 48.69, "WPM": 15.04, "Accuracy": 83.56, "Sentence": "vim.opt.relativenumber = true -- Enable relative line numbers", "Date": "11-2-2026"}
+{"Time": 20.17, "WPM": 22.6, "Accuracy": 80.85, "Sentence": "gg // Jump to the very top of the file", "Date": "13-2-2026"}
+{"Time": 26.81, "WPM": 16.56, "Accuracy": 74.0, "Sentence": "G // Jump to the very end of the file", "Date": "13-2-2026"}
+{"Time": 45.88, "WPM": 15.95, "Accuracy": 82.43, "Sentence": "vim.opt.relativenumber = true -- Enable relative line numbers", "Date": "13-2-2026"}
+{"Time": 26.33, "WPM": 16.86, "Accuracy": 78.72, "Sentence": "G // Jump to the very end of the file", "Date": "13-2-2026"}
+{"Time": 36.72, "WPM": 12.42, "Accuracy": 69.09, "Sentence": ":vsplit // Split the window vertically", "Date": "13-2-2026"}
+{"Time": 45.13, "WPM": 15.42, "Accuracy": 73.42, "Sentence": "Python is an interpreted, high-level programming language.", "Date": "14-2-2026"}
+{"Time": 19.6, "WPM": 20.82, "Accuracy": 77.27, "Sentence": "4j // Move the cursor down 4 lines", "Date": "19-2-2026"}
+{"Time": 23.16, "WPM": 19.17, "Accuracy": 78.72, "Sentence": "G // Jump to the very end of the file", "Date": "19-2-2026"}
+{"Time": 39.52, "WPM": 18.52, "Accuracy": 84.72, "Sentence": "vim.opt.relativenumber = true -- Enable relative line numbers", "Date": "19-2-2026"}
+{"Time": 33.93, "WPM": 17.33, "Accuracy": 74.24, "Sentence": "ci\" // Change everything inside the double quotes", "Date": "19-2-2026"}
+{"Time": 20.77, "WPM": 21.96, "Accuracy": 79.17, "Sentence": ":vsplit // Split the window vertically", "Date": "19-2-2026"}
+{"Sentence": "Synchronous communication is vital for real-time application state.", "Date": "19-2-2026"}
+{"Sentence": "vim.opt.relativenumber = true -- Enable relative line numbers", "Date": "19-2-2026"}
+{"Sentence": "template <typename T> T max(T a, T b) { return (a > b) ? a : b; } C++", "Date": "19-2-2026"}
+{"Sentence": "if (x == y) { return true; } C++", "Date": "19-2-2026"}
+{"Time": 21.8, "WPM": 22.57, "Accuracy": 73.21, "Sentence": "zz // Center the screen around the cursor", "Date": "19-2-2026"}
+{"Time": 30.81, "WPM": 15.97, "Accuracy": 65.08, "Sentence": "To be or not to be, that is the question.", "Date": "19-2-2026"}
+{"Time": 29.69, "WPM": 20.21, "Accuracy": 87.72, "Sentence": "dt; // Delete from cursor until the next semicolon", "Date": "19-2-2026"}

@@ -30,12 +30,15 @@ class App(customtkinter.CTk):
 
     def finish_game(self, sentence, chosen_sentence):
         results = self.engine.calculate_score(sentence)
-        self.stats.print_to_json(results, chosen_sentence)
-        self.gameframe.pack_forget()
-        self.resultsframe.label.configure(text=results)
-        self.resultsframe.pack()
-
-        self.final_results = results
+        if results != None:
+            self.stats.print_to_json(results, chosen_sentence)
+            self.gameframe.pack_forget()
+            self.resultsframe.label.configure(text=results)
+            self.resultsframe.pack()
+            self.final_results = results
+        else:
+            print("Not Correct")
+            results = self.engine.calculate_score(sentence)
 
 class MenuFrame(customtkinter.CTkFrame):
     def __init__(self, master):
@@ -157,6 +160,10 @@ class ResultsFrame(customtkinter.CTkFrame):
 
         self.label = customtkinter.CTkLabel(self, text=" ") 
         self.label.grid(row=0, column=0, padx=400, pady=400) 
+        
+        self.button = customtkinter.CTkButton(
+                self, text = "Retry"
+                )
 
 
 
