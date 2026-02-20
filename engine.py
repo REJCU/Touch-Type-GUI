@@ -8,6 +8,7 @@ class TypingEngine():
     def __init__(self, text):
         self.target = text
         self.current_input = ""
+        self.current_index = 0
         self.start_time = int(0)
         self.end_time = None 
         self.total_keystroke = 0 
@@ -30,8 +31,13 @@ class TypingEngine():
         if self.current_input == self.target:
             self.end_time = time.time()
 
+    def current_key_press(user_input):
+        if user_input == 
+
+
+
     
-    def calculate_score(user_input):
+    def calculate_score(self):
         # Checks if sentence is complete and then return results, is enter is pressed early, prints outbound variable
         if self.target == self.user_input:
             time_elapsed = time.time() - self.start_time

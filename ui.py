@@ -146,7 +146,8 @@ class GameFrame(customtkinter.CTkFrame):
             self.master.engine.process_key("BACKSPACE")
             print("back")
         elif event.char:
-            print(event.char)
+            "takes current input and checks against index to see if correct - check input, check answer and then flashes green for correct and red for no"
+            self.master.current_key_press(event.char)
 
     def enter_press(self, event):
         if event.keysym == "Return":
