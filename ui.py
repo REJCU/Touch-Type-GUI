@@ -138,7 +138,7 @@ class GameFrame(customtkinter.CTkFrame):
         self.entry = customtkinter.CTkEntry(self)
         self.entry.grid(row=1, column=0, padx=0, pady=0, sticky="ew")
         self.entry.bind("<Key>", self.handle_keypress)
-        self.entry.bind("<Return>", self.enter_press)
+        # self.entry.bind("<Return>", self.enter_press)
 
 
     def handle_keypress(self, event):
@@ -148,13 +148,19 @@ class GameFrame(customtkinter.CTkFrame):
         elif event.char:
             "takes current input and checks against index to see if correct - check input, check answer and then flashes green for correct and red for no"
             self.master.engine.process_key(event.char)
-
-    def enter_press(self, event):
-        if event.keysym == "Return":
+        elif event.keysym == "Return":
+            
             print("enter")
             input_string = self.entry.get()
             print(str(input_string))
             self.master.finish_game(self.entry.get(), self.master.chosen_sentence)
+
+    #def enter_press(self, event):
+     #   if event.keysym == "Return":
+      #      print("enter")
+       #     input_string = self.entry.get()
+        #    print(str(input_string))
+         #   self.master.finish_game(self.entry.get(), self.master.chosen_sentence)
 
 class ResultsFrame(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):

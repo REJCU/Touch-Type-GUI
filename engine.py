@@ -24,17 +24,25 @@ class TypingEngine():
         if char == "BACKSPACE":
             if self.current_index > 0:
                 # self.current_input = self.current_input[:-1]
-                self.current_index = self.current_index =- 1 
+                self.current_index -= 1
                 print({self.target[self.current_index]}, "pending")
         else:
-            if char == self.target[self.current_index]:
-                self.current_index =+ 1 
+            current_char = self.target[self.current_index]
+
+            if char == current_char:
+
                 print({self.target[self.current_index]}, "correct")
             else:
                 print({self.target[self.current_index]}, "incorrect")
-                self.current_index =+ 1
+                
+            self.current_index += 1
+        
         if self.current_index == len(self.target):
             self.end_time = time.time()
+            print("fin")
+            self.calculate_score(char)
+            
+
 
            
         
@@ -42,7 +50,7 @@ class TypingEngine():
           #  self.end_time = time.time()
 
     
-    def calculate_score(self):
+    def calculate_score(self, user_input):
         # Checks if sentence is complete and then return results, is enter is pressed early, prints outbound variable
         if self.target == self.user_input:
             time_elapsed = time.time() - self.start_time
