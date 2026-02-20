@@ -23,12 +23,16 @@ class App(customtkinter.CTk):
         new_text = self.handler.random_sentence(diffuculty)
         self.chosen_sentence = new_text
         self.engine = engine.TypingEngine(new_text)
+
+        self.current_index = 0
+
         self.gameframe.label.configure(text=new_text)
         self.gameframe.pack()
         self.gameframe.entry.focus()
 
 
     def finish_game(self, sentence, chosen_sentence):
+        """TODO- fix the logic- want to compare to it each time and flash red"""
         results = self.engine.calculate_score(sentence)
         if results != None:
             self.stats.print_to_json(results, chosen_sentence)
@@ -39,6 +43,7 @@ class App(customtkinter.CTk):
         else:
             print("Not Correct")
             results = self.engine.calculate_score(sentence)
+            print(f"target: {chosen_sentence}\n{sentence}")
 
 class MenuFrame(customtkinter.CTkFrame):
     def __init__(self, master):
@@ -100,7 +105,6 @@ class MenuFrame(customtkinter.CTkFrame):
     def button_advanced(self):
         self.master.start_game("advanced")
 
-    
     def button_programming(self):
         self.master.start_game("programming-easy")
 
@@ -110,14 +114,13 @@ class MenuFrame(customtkinter.CTkFrame):
     def button_programming_advanced(self):
         self.master.start_game("programming-advanced")
 
-
-    def button_programming_advanced(self):
+    def button_vim_motions_easy(self):
         self.master.start_game("Vim-motions-easy")
 
-    def button_programming_advanced(self):
+    def button_vim_motions_intermediate(self):
         self.master.start_game("Vim-motions-intermediate")
 
-    def button_programming_advanced(self):
+    def button_vim_motions_advanced(self):
         self.master.start_game("Vim-motions-advanced")
 
 
@@ -138,14 +141,12 @@ class GameFrame(customtkinter.CTkFrame):
         self.entry.bind("<Return>", self.enter_press)
 
 
-
-
     def handle_keypress(self, event):
         if event.keysym == "BackSpace":
             self.master.engine.process_key("BACKSPACE")
             print("back")
-        else:
-            self.master.engine.process_key(event.char)
+        elif event.char:
+            print(event.char)
 
     def enter_press(self, event):
         if event.keysym == "Return":

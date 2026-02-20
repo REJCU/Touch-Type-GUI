@@ -31,9 +31,9 @@ class TypingEngine():
             self.end_time = time.time()
 
     
-    def calculate_score(self, user_input):
+    def calculate_score(user_input):
         # Checks if sentence is complete and then return results, is enter is pressed early, prints outbound variable
-        if self.target == self.current_input:
+        if self.target == self.user_input:
             time_elapsed = time.time() - self.start_time
             wpm = (len(self.target)/5) / (time_elapsed / 60) 
             # if  self.target == self.current_input: 
@@ -46,3 +46,5 @@ class TypingEngine():
                         "WPM": round(wpm, 2),
                         "Accuracy": round(accuracy, 2)} 
             return results
+        else:
+            return None
