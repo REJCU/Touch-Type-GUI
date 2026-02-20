@@ -15,26 +15,31 @@ class TypingEngine():
         self.diffuculty = ""
 
 
+
     def process_key(self, char):
         # starts timer 
         if self.start_time == 0:
             self.start_time = time.time()
 
         if char == "BACKSPACE":
-            if len(self.current_input) > 0:
-                self.current_input = self.current_input[:-1]
+            if self.current_index > 0:
+                # self.current_input = self.current_input[:-1]
+                self.current_index = self.current_index =- 1 
+                print({self.target[self.current_index]}, "pending")
         else:
-            self.current_input += char
-            self.total_keystroke+= 1
-           
-        
-        if self.current_input == self.target:
+            if char == self.target[self.current_index]:
+                self.current_index =+ 1 
+                print({self.target[self.current_index]}, "correct")
+            else:
+                print({self.target[self.current_index]}, "incorrect")
+                self.current_index =+ 1
+        if self.current_index == len(self.target):
             self.end_time = time.time()
 
-    def current_key_press(user_input):
-        if user_input == 
-
-
+           
+        
+        # if self.current_input == self.target:
+          #  self.end_time = time.time()
 
     
     def calculate_score(self):
