@@ -1,5 +1,6 @@
 import time
 import sentence_loader
+import stats 
 
 #handler = sentence_loader()
 #text = handler.random_sentence("advanced")
@@ -13,6 +14,7 @@ class TypingEngine():
         self.end_time = None 
         self.total_keystroke = 0 
         self.diffuculty = ""
+        self.user_input = ""
 
 
 
@@ -40,7 +42,7 @@ class TypingEngine():
         if self.current_index == len(self.target):
             self.end_time = time.time()
             print("fin")
-            self.calculate_score(char)
+            results = self.calculate_score(char)
             
 
 

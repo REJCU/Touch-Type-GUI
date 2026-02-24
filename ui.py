@@ -174,10 +174,5 @@ class ResultsFrame(customtkinter.CTkFrame):
                 )
 
 
-
-
-
-
-
 app = App()
 app.mainloop()
