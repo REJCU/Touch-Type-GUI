@@ -23,36 +23,34 @@ class TypingEngine():
         if self.start_time == 0:
             self.start_time = time.time()
 
-        if char == "BACKSPACE":
+        elif char == "BACKSPACE":
             if self.current_index > 0:
                 # self.current_input = self.current_input[:-1]
                 self.current_index -= 1
-                print({self.target[self.current_index]}, "pending")
+                print({self.target[self.current_index]}, "pending", print(self.user_input) )
+            return
+
+        if self.current_index >= len(self.target):
+            return
+
+        target_char = self.target[self.current_index]
+        if char == target_char:
+            print(target_char, "correct")
         else:
-            current_char = self.target[self.current_index]
+            print(target_char, "wrong")
 
-            if char == current_char:
+        self.current_index += 1 
 
-                print({self.target[self.current_index]}, "correct")
-            else:
-                print({self.target[self.current_index]}, "incorrect")
-                
-            self.current_index += 1
-        
+
         if self.current_index == len(self.target):
             self.end_time = time.time()
-            print("fin")
-            results = self.calculate_score(char)
-            
-
-
-           
-        
-        # if self.current_input == self.target:
-          #  self.end_time = time.time()
+            total_time = time.time()
+            print(f"Fin Time: {total_time:.2f} ")
+            results = self.calculate_score()
+            print(results)
 
     
-    def calculate_score(self, user_input):
+    def calculate_score(self):
         # Checks if sentence is complete and then return results, is enter is pressed early, prints outbound variable
         if self.target == self.user_input:
             time_elapsed = time.time() - self.start_time
@@ -67,5 +65,3 @@ class TypingEngine():
                         "WPM": round(wpm, 2),
                         "Accuracy": round(accuracy, 2)} 
             return results
-        else:
-            return None
