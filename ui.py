@@ -148,12 +148,14 @@ class GameFrame(customtkinter.CTkFrame):
         elif event.char:
             "takes current input and checks against index to see if correct - check input, check answer and then flashes green for correct and red for no"
             self.master.engine.process_key(event.char)
-        elif event.keysym == "Return":
             
+
+        if self.results is not None:
             print("enter")
             input_string = self.entry.get()
             print(str(input_string))
             self.master.finish_game(self.entry.get(), self.master.chosen_sentence)
+
 
     #def enter_press(self, event):
      #   if event.keysym == "Return":
@@ -172,6 +174,10 @@ class ResultsFrame(customtkinter.CTkFrame):
         self.button = customtkinter.CTkButton(
                 self, text = "Retry"
                 )
+
+
+
+
 
 
 app = App()

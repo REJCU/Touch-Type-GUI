@@ -44,10 +44,9 @@ class TypingEngine():
 
         if self.current_index == len(self.target):
             self.end_time = time.time()
-            total_time = time.time()
-            print(f"Fin Time: {total_time:.2f} ")
-            results = self.calculate_score()
-            print(results)
+            return self.calculate_score()
+
+        return None
 
     
     def calculate_score(self):
