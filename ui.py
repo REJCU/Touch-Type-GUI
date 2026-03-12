@@ -152,9 +152,9 @@ class GameFrame(customtkinter.CTkFrame):
 
         if self.results is not None:
             print("enter")
-            input_string = self.entry.get()
-            print(str(input_string))
-            self.master.finish_game(self.entry.get(), self.master.chosen_sentence)
+            # input_string = self.entry.get()
+           # print(str(input_string))
+            # self.master.finish_game(self.entry.get(), self.master.chosen_sentence)
 
 
     #def enter_press(self, event):
@@ -174,10 +174,6 @@ class ResultsFrame(customtkinter.CTkFrame):
         self.button = customtkinter.CTkButton(
                 self, text = "Retry"
                 )
-
-
-
-
 
 
 app = App()
