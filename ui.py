@@ -17,8 +17,10 @@ class App(customtkinter.CTk):
         self.resultsframe = ResultsFrame(self)
         self.final_results = None
         self.stats = stats.RecordResults()
+        self.diffuculty = None
 
     def start_game(self, diffuculty):
+        self.diffuculty = diffuculty
         self.menuframe.pack_forget()
         new_text = self.handler.random_sentence(diffuculty)
         self.chosen_sentence = new_text
@@ -34,7 +36,7 @@ class App(customtkinter.CTk):
     def finish_game(self, sentence, chosen_sentence):
         """TODO- fix the logic- want to compare to it each time and flash red"""
         results = self.engine.calculate_score(sentence)
-        if results != None:
+        if results is not None:
             self.stats.print_to_json(results, chosen_sentence)
             self.gameframe.pack_forget()
             self.resultsframe.label.configure(text=results)
@@ -42,8 +44,16 @@ class App(customtkinter.CTk):
             self.final_results = results
         else:
             print("Not Correct")
-            results = self.engine.calculate_score(sentence)
-            print(f"target: {chosen_sentence}\n{sentence}")
+            self.gameframe.entry.delete(0, 'end')
+
+    def retry_game(self):
+        # uses previous diffuculty
+        self.resultsframe.pack_forget()
+        self.gameframe.entry.delete(0, "end")
+        self.start_game(self.diffuculty)
+
+
+
 
 class MenuFrame(customtkinter.CTkFrame):
     def __init__(self, master):
@@ -128,41 +138,26 @@ class MenuFrame(customtkinter.CTkFrame):
 class GameFrame(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
-
         self.label = customtkinter.CTkLabel(self, text=" ")
         self.label.grid(row=0, column=0, padx=400, pady=400)
-
-        self.grid_columnconfigure(0, weight=1) 
+        self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
-
         self.entry = customtkinter.CTkEntry(self)
         self.entry.grid(row=1, column=0, padx=0, pady=0, sticky="ew")
         self.entry.bind("<Key>", self.handle_keypress)
-        # self.entry.bind("<Return>", self.enter_press)
+        self.entry.bind("<Return>", self.enter_press)
+
 
 
     def handle_keypress(self, event):
         if event.keysym == "BackSpace":
             self.master.engine.process_key("BACKSPACE")
-            print("back")
         elif event.char:
-            "takes current input and checks against index to see if correct - check input, check answer and then flashes green for correct and red for no"
             self.master.engine.process_key(event.char)
-            
 
-        if self.results is not None:
-            print("enter")
-            # input_string = self.entry.get()
-           # print(str(input_string))
-            # self.master.finish_game(self.entry.get(), self.master.chosen_sentence)
-
-
-    #def enter_press(self, event):
-     #   if event.keysym == "Return":
-      #      print("enter")
-       #     input_string = self.entry.get()
-        #    print(str(input_string))
-         #   self.master.finish_game(self.entry.get(), self.master.chosen_sentence)
+    def enter_press(self, event):
+        input_string = self.entry.get()
+        self.master.finish_game(input_string, self.master.chosen_sentence)
 
 class ResultsFrame(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
@@ -171,9 +166,12 @@ class ResultsFrame(customtkinter.CTkFrame):
         self.label = customtkinter.CTkLabel(self, text=" ") 
         self.label.grid(row=0, column=0, padx=400, pady=400) 
         
-        self.button = customtkinter.CTkButton(
-                self, text = "Retry"
-                )
+        self.button = customtkinter.CTkButton(self, text = "Retry", command=lambda: self.retry_button())
+        self.button.grid(pady=400, padx=400)
+
+    def retry_button(self):
+        self.master.retry_game()
+
 
 
 app = App()

@@ -19,48 +19,37 @@ class TypingEngine():
 
 
     def process_key(self, char):
-        # starts timer 
+        # starts timer
+        target_char = self.target[self.current_index]
         if self.start_time == 0:
             self.start_time = time.time()
+        
+        self.total_keystroke += 1
+        if char == "BACKSPACE":
+            if len(self.user_input) > 0:
+                self.user_input = self.user_input[:-1]
+                # self.current_index -= 1
 
-        elif char == "BACKSPACE":
-            if self.current_index > 0:
-                # self.current_input = self.current_input[:-1]
-                self.current_index -= 1
-                print({self.target[self.current_index]}, "pending", print(self.user_input) )
-            return
+        # can probably add current error checking by text and checking against char
 
-        if self.current_index >= len(self.target):
-            return
-
-        target_char = self.target[self.current_index]
-        if char == target_char:
-            print(target_char, "correct")
         else:
-            print(target_char, "wrong")
+            self.user_input += char
+            print(self.user_input, char, self.target, self.current_index)
 
-        self.current_index += 1 
+        # self.current_index += 1
+
+        
 
 
-        if self.current_index == len(self.target):
-            self.end_time = time.time()
-            return self.calculate_score()
-
-        return None
-
-    
-    def calculate_score(self):
+    def calculate_score(self, user_input):
         # Checks if sentence is complete and then return results, is enter is pressed early, prints outbound variable
-        if self.target == self.user_input:
+        if self.target == user_input:
             time_elapsed = time.time() - self.start_time
-            wpm = (len(self.target)/5) / (time_elapsed / 60) 
-            # if  self.target == self.current_input: 
+            wpm = (len(self.target)/5) / (time_elapsed / 60)
             accuracy = ((len(self.target)) / self.total_keystroke) * 100
-            #else:
-            #   print("Try again")
-            #  pass 
-            print(f" Time: {round(time_elapsed, 2)}, WPM: {round(wpm,2)} , Accuracy: {round(accuracy, 2)}") 
+            print(f" Time: {round(time_elapsed, 2)}, WPM: {round(wpm,2)} , Accuracy: {round(accuracy, 2)}")
             results = { "Time": round(time_elapsed, 2),
                         "WPM": round(wpm, 2),
-                        "Accuracy": round(accuracy, 2)} 
+                        "Accuracy": round(accuracy, 2)}
             return results
+        return None
