@@ -52,4 +52,3 @@ class TypingEngine():
                         "WPM": round(wpm, 2),
                         "Accuracy": round(accuracy, 2)}
             return results
-        return None

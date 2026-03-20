@@ -36,21 +36,18 @@ class App(customtkinter.CTk):
     def finish_game(self, sentence, chosen_sentence):
         """TODO- fix the logic- want to compare to it each time and flash red"""
         results = self.engine.calculate_score(sentence)
-        if results is not None:
-            self.stats.print_to_json(results, chosen_sentence)
-            self.gameframe.pack_forget()
-            self.resultsframe.label.configure(text=results)
-            self.resultsframe.pack()
-            self.final_results = results
-        else:
-            print("Not Correct")
-            self.gameframe.entry.delete(0, 'end')
+        self.stats.print_to_json(results, chosen_sentence)
+        self.gameframe.pack_forget()
+        self.resultsframe.label.configure(text=results)
+        self.resultsframe.pack()
+        self.final_results = results
 
     def retry_game(self):
         # uses previous diffuculty
         self.resultsframe.pack_forget()
         self.gameframe.entry.delete(0, "end")
-        self.start_game(self.diffuculty)
+        self.menuframe.pack()
+       #self.start_game(self.diffuculty)
 
 
 
@@ -157,7 +154,7 @@ class GameFrame(customtkinter.CTkFrame):
 
     def enter_press(self, event):
         input_string = self.entry.get()
-        self.master.finish_game(input_string, self.master.chosen_sentence)
+        self.master.finish_game(input_string,  self.master.chosen_sentence)
 
 class ResultsFrame(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
