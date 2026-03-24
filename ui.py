@@ -1,5 +1,4 @@
 import customtkinter
-import time 
 
 import engine
 from sentence_loader import SentenceHandler
@@ -13,7 +12,6 @@ class App(customtkinter.CTk):
         self.menuframe = MenuFrame(self)
         self.gameframe = GameFrame(self)
         self.menuframe.pack()
-        
         self.resultsframe = ResultsFrame(self)
         self.final_results = None
         self.stats = stats.RecordResults()
@@ -103,34 +101,6 @@ class MenuFrame(customtkinter.CTkFrame):
         )
         self.button.pack(padx=40, pady=40)
 
-    def button_easy(self):
-        self.master.start_game("beginner")
-
-    def button_intermediate(self):
-        self.master.start_game("intermediate")
-
-    def button_advanced(self):
-        self.master.start_game("advanced")
-
-    def button_programming(self):
-        self.master.start_game("programming-easy")
-
-    def button_programming_intermediate(self):
-        self.master.start_game("programming-intermediate")
-
-    def button_programming_advanced(self):
-        self.master.start_game("programming-advanced")
-
-    def button_vim_motions_easy(self):
-        self.master.start_game("Vim-motions-easy")
-
-    def button_vim_motions_intermediate(self):
-        self.master.start_game("Vim-motions-intermediate")
-
-    def button_vim_motions_advanced(self):
-        self.master.start_game("Vim-motions-advanced")
-
-
 
 class GameFrame(customtkinter.CTkFrame):
     def __init__(self, master, **kwargs):
@@ -143,7 +113,6 @@ class GameFrame(customtkinter.CTkFrame):
         self.entry.grid(row=1, column=0, padx=0, pady=0, sticky="ew")
         self.entry.bind("<Key>", self.handle_keypress)
         self.entry.bind("<Return>", self.enter_press)
-
 
 
     def handle_keypress(self, event):
@@ -168,7 +137,6 @@ class ResultsFrame(customtkinter.CTkFrame):
 
     def retry_button(self):
         self.master.retry_game()
-
 
 
 app = App()

@@ -1,6 +1,6 @@
 import time
-import sentence_loader
-import stats 
+# import sentence_loader
+# import stats 
 
 #handler = sentence_loader()
 #text = handler.random_sentence("advanced")
@@ -20,7 +20,7 @@ class TypingEngine():
 
     def process_key(self, char):
         # starts timer
-        target_char = self.target[self.current_index]
+        # target_char = self.target[self.current_index]
         if self.start_time == 0:
             self.start_time = time.time()
         
@@ -34,6 +34,7 @@ class TypingEngine():
 
         else:
             self.user_input += char
+            print("")
             print(self.user_input, char, self.target, self.current_index)
 
         # self.current_index += 1
